@@ -1,4 +1,4 @@
-import { Layout, Menu } from "antd";
+import { Layout, Menu, MenuProps } from "antd";
 import {
   UploadOutlined,
   UserOutlined,
@@ -8,20 +8,34 @@ import { createElement } from "react";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const items = [
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  UserOutlined,
-].map((icon, index) => ({
-  key: String(index + 1),
-  icon: createElement(icon),
-  label: `nav ${index + 1}`,
-}));
+const items: MenuProps["items"] = [
+  {
+    key: "asdfasfsfr",
+    label: "Dashboard",
+  },
+  {
+    key: "asdfasfsfs",
+    label: "Profile",
+  },
+  {
+    key: "asdfasfsfe",
+    label: "User Management",
+    children: [
+      {
+        key: "asdfasfsfry",
+        label: "Create Admin",
+      },
+      {
+        key: "asdfasfsfq",
+        label: "Create Student",
+      },
+    ],
+  },
+];
 
 const MainLaout = () => {
   return (
-    <Layout>
+    <Layout style={{ height: "100vh" }}>
       <Sider
         breakpoint="lg"
         collapsedWidth="0"
